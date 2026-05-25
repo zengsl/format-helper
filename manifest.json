@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "编解码助手",
+  "version": "1.0.0",
+  "description": "选中文字右键即可 Base64 编码或解码，结果自动复制到剪贴板",
+  "permissions": [
+    "contextMenus",
+    "clipboardWrite",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
